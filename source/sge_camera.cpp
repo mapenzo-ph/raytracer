@@ -26,15 +26,15 @@ namespace sge {
         return this->position;
     }
 
-    double const Camera::getViewportWidth() const noexcept {
+    const double Camera::getViewportWidth() const noexcept {
         return this->viewportWidth;
     }
 
-    double const Camera::getViewportHeight() const noexcept {
+    const double Camera::getViewportHeight() const noexcept {
         return this->viewportHeight;
     }
     
-    double const Camera::getViewportDistance() const noexcept {
+    const double Camera::getViewportDistance() const noexcept {
         return this->viewportDistance;
     }
 

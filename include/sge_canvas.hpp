@@ -22,8 +22,8 @@ namespace sge {
         ~Canvas();
 
         // getters
-        int const getWidth() const noexcept;
-        int const getHeight() const noexcept;
+        const int getWidth() const noexcept;
+        const int getHeight() const noexcept;
 
         // setters
         void setWidth(int width);

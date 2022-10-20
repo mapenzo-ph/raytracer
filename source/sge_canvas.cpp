@@ -34,8 +34,8 @@ namespace sge {
     /////////////////////////
     // getters 
 
-    int const Canvas::getWidth() const noexcept { return this->width; }
-    int const Canvas::getHeight() const noexcept {return this->height; }
+    const int Canvas::getWidth() const noexcept { return this->width; }
+    const int Canvas::getHeight() const noexcept {return this->height; }
 
     /////////////////////////
     // setters 

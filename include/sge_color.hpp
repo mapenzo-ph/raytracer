@@ -36,10 +36,10 @@ namespace sge {
         friend std::ostream& operator<<(std::ostream& os, const Color& color) noexcept;
 
         // getters
-        uint8_t const getR() const noexcept;
-        uint8_t const getG() const noexcept;
-        uint8_t const getB() const noexcept;
-        uint8_t const getA() const noexcept;
+        const uint8_t getR() const noexcept;
+        const uint8_t getG() const noexcept;
+        const uint8_t getB() const noexcept;
+        const uint8_t getA() const noexcept;
 
      private:
         std::array<uint8_t,3> rgb;

@@ -20,11 +20,11 @@ namespace sge {
     /////////////////////////
     // getters
 
-    Color& Scene::getBackgroundColor() noexcept {
+    const Color& Scene::getBackgroundColor() const noexcept {
         return this->backgroundColor;
     }
 
-    std::vector<Sphere> const &Scene::getObjects() const noexcept {
+    const std::vector<Sphere>& Scene::getObjects() const noexcept {
         return this->objects;
     }
 
@@ -50,8 +50,20 @@ namespace sge {
         this->objects.push_back(std::move(primitive));
     }
 
-    int const Scene::countObjects() const noexcept {
+    const int Scene::countObjects() const noexcept {
         return this->objects.size();
+    }
+
+    void Scene::addLight(const Light& light) noexcept {
+        this->lights.push_back(light);
+    }
+
+    void Scene::addLight(Light&& light) noexcept {
+        this->lights.push_back(light);
+    }
+
+    const int Scene::countLights() const noexcept {
+        return this->lights.size();
     }
 
     /////////////////////////

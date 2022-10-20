@@ -125,19 +125,19 @@ namespace sge {
     /////////////////////////
     // getters
 
-    uint8_t const Color::getR() const noexcept {
+    const uint8_t Color::getR() const noexcept {
         return rgb.at(0);
     }
 
-    uint8_t const Color::getG() const noexcept {
+    const uint8_t Color::getG() const noexcept {
         return rgb.at(1);
     }
 
-    uint8_t const Color::getB() const noexcept {
+    const uint8_t Color::getB() const noexcept {
         return rgb.at(2);
     }
 
-    uint8_t const Color::getA() const noexcept {
+    const uint8_t Color::getA() const noexcept {
         return alpha;
     }
 

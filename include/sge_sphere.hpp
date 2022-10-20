@@ -25,7 +25,8 @@ namespace sge {
         Sphere& operator=(Sphere&&);
 
         // getters
-        Color& getColor() noexcept;
+        const Vector& getCenter() const noexcept;
+        const Color& getColor() const noexcept;
 
         // interface functions
         std::tuple<double, double> intersectRay(const Vector&, const Vector&) const noexcept;

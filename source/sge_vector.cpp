@@ -1,6 +1,7 @@
 #include "sge_vector.hpp"
 
 // std
+#include <stdexcept>
 #include <iostream>
 #include <cmath>
 
@@ -92,6 +93,25 @@ namespace sge {
         return *this;
     }
 
+    // operator /
+    Vector Vector::operator/(double factor) const {
+        if (factor == 0) { throw std::invalid_argument("Vector: zero division error"); }
+        Vector result;
+        for (int i = 0; i < 3; ++i) {
+            result.components.at(i) = this->components.at(i) / factor;
+        }
+        return result;
+    }
+
+    // operator /=
+    Vector& Vector::operator/=(double factor) {
+        if (factor == 0) { throw std::invalid_argument("Vector: zero division error"); }
+        for (int i = 0; i < 3; ++i) {
+            this->components.at(i) /= factor;
+        }
+        return *this;
+    }
+
     /////////////////////////
     // logic operators
 
@@ -113,7 +133,7 @@ namespace sge {
     /////////////////////////
     // interface functions
 
-    double dot(const Vector& vec1, const Vector& vec2) noexcept {
+    const double dot(const Vector& vec1, const Vector& vec2) noexcept {
         auto dot = 0.0;
         for (int i = 0; i < 3; ++i) {
             dot += vec1.components.at(i) * vec2.components.at(i);
@@ -121,9 +141,13 @@ namespace sge {
         return dot;
     }
 
-    double distance(const Vector& vec1, const Vector& vec2) noexcept {
+    const double distance(const Vector& vec1, const Vector& vec2) noexcept {
         auto diff = vec1 - vec2;
         return std::sqrt(dot(diff, diff));
+    }
+
+    const double Vector::norm() const noexcept {
+        return std::sqrt(dot(*this, *this));
     }
 
     /////////////////////////

@@ -15,9 +15,9 @@ namespace sge {
 
         // getters
         Vector const & getPosition() const noexcept;
-        double const getViewportWidth() const noexcept;
-        double const getViewportHeight() const noexcept;
-        double const getViewportDistance() const noexcept;
+        const double getViewportWidth() const noexcept;
+        const double getViewportHeight() const noexcept;
+        const double getViewportDistance() const noexcept;
 
         // setters
         void setPosition(const Vector&) noexcept;

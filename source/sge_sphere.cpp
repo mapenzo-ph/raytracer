@@ -45,7 +45,11 @@ namespace sge {
     /////////////////////////
     // getters
 
-    Color& Sphere::getColor() noexcept {
+    const Vector& Sphere::getCenter() const noexcept {
+        return this->center;
+    }
+
+    const Color& Sphere::getColor() const noexcept {
         return this->color;
     }
 

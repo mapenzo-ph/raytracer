@@ -20,8 +20,8 @@ namespace sge {
         Raytracer(const Raytracer&) = delete;
         Raytracer(Raytracer&&)      = delete;
 
-        Vector const canvasToViewport(int, int) const noexcept;
-        Color const traceRay(const Vector&, const Vector&, double, double) const noexcept;
+        const Vector canvasToViewport(int, int) const noexcept;
+        const Color& traceRay(const Vector&, const Vector&, double, double) const noexcept;
         void trace() const noexcept;
     
      private:

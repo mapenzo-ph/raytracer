@@ -4,6 +4,7 @@
 // sge
 #include "sge_color.hpp"
 #include "sge_sphere.hpp"
+#include "sge_light.hpp"
 
 // std
 #include <vector>
@@ -18,8 +19,8 @@ namespace sge {
         Scene(Color&&);
 
         // getters
-        Color& getBackgroundColor() noexcept;
-        std::vector<Sphere> const &getObjects() const noexcept;
+        const Color& getBackgroundColor() const noexcept;
+        const std::vector<Sphere>& getObjects() const noexcept;
         
         // setters
         void setBackgroundColor(const Color&) noexcept;
@@ -28,12 +29,16 @@ namespace sge {
         // interface functions
         void addObject(const Sphere&) noexcept;
         void addObject(Sphere&&) noexcept;
-        int const countObjects() const noexcept;
-        Color const & traceRay(const Vector&, const Vector&, double, double) const noexcept;
-      
+        const int countObjects() const noexcept;
+
+        void addLight(const Light&) noexcept;
+        void addLight(Light&&) noexcept;
+        const int countLights() const noexcept;
+
      private:
         Color backgroundColor;
         std::vector<Sphere> objects;
+        std::vector<Light> lights;
     };
 
 } // namespace sge
