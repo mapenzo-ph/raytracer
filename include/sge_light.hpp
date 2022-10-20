@@ -27,6 +27,7 @@ namespace sge {
         Light& operator=(Light&&) noexcept;
 
         // getters
+        const LightType getType() const noexcept;
         const Vector& getSrcOrDir() const noexcept;
         const double getIntensity() const noexcept;
 

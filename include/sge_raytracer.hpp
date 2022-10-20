@@ -20,15 +20,19 @@ namespace sge {
         Raytracer(const Raytracer&) = delete;
         Raytracer(Raytracer&&)      = delete;
 
-        const Vector canvasToViewport(int, int) const noexcept;
-        const Color& traceRay(const Vector&, const Vector&, double, double) const noexcept;
+        // interface functions  
         void trace() const noexcept;
     
      private:
+        // helper functions
+        const Vector canvasToViewport(int, int) const noexcept;
+        const double computeLighting(const Vector&, const Vector&) const noexcept;
+        const Color traceRay(const Vector&, const Vector&, double, double) const noexcept;
+
+        // class members
         Scene *scene;
         Camera *camera;
         Canvas *canvas;
-
     };
 
 } // namespace sge

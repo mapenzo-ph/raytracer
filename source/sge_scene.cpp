@@ -28,6 +28,10 @@ namespace sge {
         return this->objects;
     }
 
+    const std::vector<Light>& Scene::getLights() const noexcept {
+        return this->lights;
+    }
+
     /////////////////////////
     // setters
 

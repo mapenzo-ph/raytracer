@@ -64,6 +64,10 @@ namespace sge {
     /////////////////////////
     // getters
 
+    const LightType Light::getType() const noexcept {
+        return this->type;
+    }
+
     const Vector& Light::getSrcOrDir() const noexcept {
         return this->srcOrDir;
     }

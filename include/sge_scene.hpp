@@ -21,6 +21,7 @@ namespace sge {
         // getters
         const Color& getBackgroundColor() const noexcept;
         const std::vector<Sphere>& getObjects() const noexcept;
+        const std::vector<Light>& getLights() const noexcept;
         
         // setters
         void setBackgroundColor(const Color&) noexcept;
